@@ -1,0 +1,17 @@
+const fs = require('fs');
+const process = require('process');
+
+function cat(path) {
+    fs.readFile(path, 'utf8', function(err, data) {
+        if (err) {
+            // handle error
+            console.error(err);
+            // kill the process
+            process.exit(1);
+        }
+  
+            console.log(data);
+});
+}
+
+cat(process.argv[2]);
